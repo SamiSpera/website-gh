@@ -1,4 +1,6 @@
 import HeadComponent from '../components/HeadComponent'
+import Head from 'next/head'
+
 import HeaderNav from '../components/HeaderNav'
 import FooterBar from '../components/Footer'
 import { ProGallery } from 'pro-gallery'

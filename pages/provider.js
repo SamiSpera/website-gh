@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Head from 'next/head'
+
 import HeadComponent from '../components/HeadComponent'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
