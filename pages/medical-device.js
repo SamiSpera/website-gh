@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import HeadComponent from '../components/HeadComponent'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
 import FooterBar from '../components/Footer'
@@ -8,10 +9,7 @@ import { useMedia } from '../hooks/useMedia'
 export default function MedicalDevicePage() {
   return (
     <>
-      <Head>
-        <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <HeadComponent />
       <HeaderNav />
       <div className='container'>
         <h2 id='hero-h2'>
@@ -30,7 +28,7 @@ export default function MedicalDevicePage() {
         />
         {/* </div> */}
 
-        <div style={{ backgroundColor: 'var(--blueXLight' }}>
+        <div>
           <div className='statistics'>
             <div>
               <NumberScroll

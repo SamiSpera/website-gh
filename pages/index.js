@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import HeadComponent from '../components/HeadComponent'
 import HeaderNav from '../components/HeaderNav'
 import Link from 'next/link'
 import LogoAnimation from '../components/LogoAnimation'
@@ -16,30 +16,17 @@ export default function Home() {
 
   return (
     <div className='container'>
-      <Head>
-        <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/favicon.ico' />
-        <link
-          rel='preload'
-          href='/website-gh/fonts/VarelaRound-Regular.ttf'
-          as='font'
-          crossOrigin=''
-        />
-      </Head>
+      <HeadComponent />
       <HeaderNav />
 
-      <div id='hero-h1'>
-        <h1>Intelligent Surgical Planning Software from Diagnosis to Recovery</h1>
-      </div>
-      <div style={{ height: '95vh', overflow: 'hidden' }}>
-        <img id='landing-bg' src='/website-gh/images/iPad-landing.jpg' />
-      </div>
+      <div>
+        <div id='landing-bg-div'>
+          <img id='landing-bg' src='/website-gh/images/iPad-landing.png' />
+        </div>
+        <div id='hero-h1'>
+          <h1>Intelligent Surgical Planning Software from Diagnosis to Recovery</h1>
+        </div>
 
-      <div
-        style={{
-          height: useMedia('(max-width: 800px') ? 170 : 0
-        }}
-      >
         <div className='statistics'>
           <div>
             <NumberScroll
@@ -88,8 +75,7 @@ export default function Home() {
             </div>
 
             <div id='timeline-div'>
-              {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
-              <img id='timeline-graphic' src='/website-gh/images/timeline-graphic.png' />
+              <img id='timeline-graphic' src='/website-gh/images/graphics/timeline-graphic.png' />
             </div>
           </div>
         ) : (
@@ -242,11 +228,17 @@ export default function Home() {
         .container {
           width: 100%;
         }
+
+        @media (max-width: 700px) {
+          .container {
+            overflow: hidden;
+          }
+        }
         
         #hero-h1 > h1 {
           color: white;
-          font-size: 64px;
-          font-family: 'Varela Round';
+          font-size: 4em;
+          font-family: 'Varela Round', 'sans-serif';
           text-align: center;
           width: 90%;
           position: absolute;
@@ -255,11 +247,10 @@ export default function Home() {
           border-radius: 10px;
           padding: 10px;
           text-shadow: 0 1px 2px RGBa(0,0,0, .6), 0 0 50px #cdf0fd;
-          // text-shadow: 0 1px 2px RGBa(0,0,0, .6), 0 0 50px var(--blueDocspera);
           margin-bottom: 0;
         }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1400px) {
           #hero-h1 > h1 {
             font-size: 50px;
           }
@@ -281,11 +272,58 @@ export default function Home() {
           font-size: 20px;
         }
 
-        #landing-bg {
+        #landing-bg-div {
+          overflow: hidden;
+          width: 100vw;
           z-index: -100;
-          min-width: 100%;
-          height: 100%;
         }
+
+        #landing-bg {
+          width: 100%;
+          height: auto;
+        }
+
+        @media (max-width: 1000px) {
+          #landing-bg {
+            width: 120%;
+          }
+        }
+
+        @media (max-width: 500px) {
+          #landing-bg-div {
+            margin-top: -50px;
+          }
+
+          #hero-h1 > h1 {
+            position: static;
+            color: var(--blueDark);
+            left: 0;
+            font-size: 25px;
+            width: 100%;
+            margin-bottom: -50px;
+            text-shadow: none;
+          }
+        }
+       
+        @media (max-width: 600px) {
+          #landing-bg-div {
+            width: 120%;
+          }
+        }
+
+        @media (max-width: 800px) {
+          .statistics {
+            padding-top: 20px
+          }
+        }
+        
+        @media (min-width: 800px) {
+          .statistics {
+            padding-top: 50px
+          }
+        }
+
+
 
 
 

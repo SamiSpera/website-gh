@@ -1,18 +1,15 @@
 import Head from 'next/head'
+import HeadComponent from '../components/HeadComponent'
 import HeaderNav from '../components/HeaderNav'
 import FooterBar from '../components/Footer'
 
 export default function LoginPage() {
   return (
     <>
-      <Head>
-        <title>DocSpera</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <HeadComponent />
       <HeaderNav />
       <div className='container'>
-
-      <iframe src="https://docspera.com/login" />
+        <iframe src='https://docspera.com/login' />
       </div>
       <FooterBar />
 
@@ -44,8 +41,6 @@ export default function LoginPage() {
         h2 {
           margin-top: 80px;
         }
-
-        
       `}</style>
     </>
   )

@@ -42,7 +42,6 @@ export default function Carousel({ content, type }) {
 
   useEffect(() => {
     if (current + 2 == content.length) {
-      console.log('current!:', current)
       setCurrent(0)
     }
   }, [current])
@@ -70,19 +69,15 @@ export default function Carousel({ content, type }) {
           <Chevron color={current === 0 ? 'grey' : 'black'} />
         </div>
         {content.map((item, idx) => {
-          console.log('idx', idx)
           if (tabletSize) {
             if (idx == current || idx == current + 1 || idx == current + 2) {
-              console.log(current)
               return <CarouselItem itemInfo={item} key={idx} type={type} />
             }
           } else if (mobileSize) {
             if (idx == current || idx == current + 1) {
-              console.log(current)
               return <CarouselItem itemInfo={item} key={idx} type={type} />
             }
           } else if (idx == current || idx == current + 1) {
-            console.log(current)
             return <CarouselItem itemInfo={item} key={idx} type={type} />
           }
         })}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Head from 'next/head'
+import HeadComponent from '../components/HeadComponent'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
 import Carousel from '../components/Carousel'
@@ -117,13 +117,10 @@ export default function Provider() {
 
   return (
     <>
-      <Head>
-        <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <HeadComponent />
       <HeaderNav />
 
-      <div className='container' style={{ border: '1px solid pink' }}>
+      <div className='container'>
         <div id='hero-div'>
           <h2 id='hero-h2'>
             Intelligent Surgical Coordination: Enabling Efficiency and Profitability
@@ -134,7 +131,7 @@ export default function Provider() {
             care.
           </p>
           <img src='/website-gh/images/provider-art-work.png' id='surgeon-doodle' />
-          <div className='statistics'>
+          <div className='statistics' style={{ marginBottom: 20 }}>
             <div>
               <NumberScroll
                 imgSrc='/website-gh/images/surgeon-users.png'
@@ -166,14 +163,16 @@ export default function Provider() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: 'var(--blueDocspera', height: 400 }}>
+        <div style={{ backgroundColor: 'var(--blueXLight)' }}>
           <div id='seamless-integration' className='inner-div'>
-            <h2 style={{ color: 'white' }}>Seamless Integration </h2>
-            {/* <img src='/website-gh/images/seamless-integration.png' /> */}
+            <h2>Seamless Integration </h2>
+            <img src='/website-gh/images/graphics/seamless-integration.png' />
           </div>
         </div>
 
-        <ProviderSolutions />
+        <div id='provider-solutions-inside-provider'>
+          <ProviderSolutions />
+        </div>
 
         <div id='rapid-integration' className='inner-div'>
           <h2>Rapid Integration & Deployment at Scale</h2>
@@ -282,19 +281,11 @@ export default function Provider() {
         </div>
 
         <div className='inner-div'>
-          <h2 style={{ minWidth: '100%' }}>Join 300+ Institutions Using DocSpera Across the US</h2>
+          <h2 style={{ width: '100%', textAlign: 'center' }}>
+            Join 300+ Institutions Using DocSpera Across the US
+          </h2>
           <div className='logos institutions'>
-            {/* <div>
-              {instLogos.slice(0, numberOfInstLogos).map((logo) => {
-                return <img src={logo.img} height={logo.height} width={logo.width} />
-              })}
-              <button onClick={handleViewMoreInst}>
-                {viewMoreInst ? 'View Less' : 'View More'}
-              </button>
-            </div>
-            <div> */}
             <Carousel type='logo' content={instLogos} />
-            {/* </div> */}
           </div>
         </div>
       </div>
@@ -320,8 +311,17 @@ export default function Provider() {
           margin: 0 auto;
         }
 
+        @media (max-width: 800px) {
+          #hero-p {
+            max-width: 90%;
+          }
+          #hero-h2 {
+            max-width: 90%;
+            margin: 0 auto;
+          }
+        }
+
         #hero-div {
-          height: 100vh;
           display: block;
           margin-top: 80px;
         }
@@ -333,6 +333,28 @@ export default function Provider() {
           display: block;
           margin: 0 auto;
           z-index: -10000;
+        }
+
+        #seamless-integration > img {
+          display: block;
+          max-width: 550px;
+          margin: 0 auto;
+          margin-top: 50px;
+          margin-bottom: -160px;
+        }
+
+        @media (max-width: 620px) {
+          #seamless-integration > img {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+
+        @media (max-width: 800px) {
+          #provider-solutions-inside-provider {
+            padding-top: 100px;
+            background-color: var(--blueXLight);
+          }
         }
 
         .logos > div:nth-child(1) {
