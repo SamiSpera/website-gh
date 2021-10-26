@@ -1,4 +1,4 @@
-import HeadComponent from '../components/HeadComponent'
+import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import Link from 'next/link'
 import LogoAnimation from '../components/LogoAnimation'
@@ -16,7 +16,16 @@ export default function Home() {
 
   return (
     <div className='container'>
-      <HeadComponent />
+      <Head>
+        <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
+        <link rel='icon' href='website-gh/favicon.ico' />
+        <link
+          rel='preload'
+          href='/website-gh/fonts/VarelaRound-Regular.ttf'
+          as='font'
+          crossOrigin=''
+        />
+      </Head>
       <HeaderNav />
 
       <div>

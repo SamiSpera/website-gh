@@ -9,7 +9,16 @@ import { useMedia } from '../hooks/useMedia'
 export default function MedicalDevicePage() {
   return (
     <>
-      <HeadComponent />
+      <Head>
+        <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
+        <link rel='icon' href='website-gh/favicon.ico' />
+        <link
+          rel='preload'
+          href='/website-gh/fonts/VarelaRound-Regular.ttf'
+          as='font'
+          crossOrigin=''
+        />
+      </Head>
       <HeaderNav />
       <div className='container'>
         <h2 id='hero-h2'>
