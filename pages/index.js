@@ -24,6 +24,7 @@ export default function Home() {
           as='font'
           crossOrigin=''
         />
+        <link rel='stylesheet' href='../styles/styles.css' />
       </Head>
       <HeaderNav />
 
