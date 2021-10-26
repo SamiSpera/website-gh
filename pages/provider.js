@@ -121,7 +121,7 @@ export default function Provider() {
     <>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='website-gh/favicon.ico' />
+        <link rel='icon' href='/website-gh/favicon.ico' />
         <link
           rel='preload'
           href='/website-gh/fonts/VarelaRound-Regular.ttf'
