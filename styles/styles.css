@@ -72,7 +72,6 @@ h2 {
   margin: 0 auto;
   max-width: 1150px;
   padding: 100px 5vw 100px 5vw;
-  /* transform: translate(500px, 0); */
 }
 
 @media (max-width: 800px) {
